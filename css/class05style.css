@@ -1,0 +1,52 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+
+* {
+
+}
+
+html {
+  font-family:fantasy;
+
+}
+
+h1 {
+  background-color: pink;
+
+}
+
+p {
+  font-family: 'Lobster', cursive;
+}
+
+#headerOne {
+}
+
+.header, .bacon {
+
+}
+
+.bacon {
+
+}
+
+.list li {
+
+}
+
+li [hidden] {
+
+}
+
+p:hover {
+  cursor: crosshair;
+}
+
+li:link {
+
+}
+
+li:visited {
+
+}
+
+/**/

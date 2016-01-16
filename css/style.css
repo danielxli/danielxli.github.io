@@ -1,0 +1,41 @@
+html {
+  font-family: arial;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 500px;
+}
+
+h1 {
+  background-color: #006699;
+  color: white;
+  padding: 10px;
+}
+
+p {
+  color: #669999;
+}
+
+.magic {
+  font-size: 8px;
+  color: gray;
+}
+
+#status {
+  background-color: #009999;
+  opacity: 1.0;
+  font-family: arial;
+  font-size: 20px;
+  padding: 5px;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+
+#inputBox, #submitButton {
+  background-color: white;
+  font-family: arial;
+  font-size: 20px;
+  padding: 20px;
+  color: gray;
+  letter-spacing: 0.5px;
+}
