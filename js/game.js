@@ -13,8 +13,8 @@ var questions = [
   'Do I wear contacts?',
   'Do I have any pets?',
   'How old am I?',
-  'For the last challenge... Guess the number I am thinking... Between 1 and 100',
-  'What are my favourite colours?'
+  'Guess the number I am thinking... Between 1 and 100',
+  'Ok, last question. What is one of my favourite colours?'
 ];
 
 var answers = [
@@ -35,11 +35,11 @@ var statusMessage = document.getElementById('status');
 statusMessage.textContent = "Hello and welcome to the guessing game! Type your name below:";
 
 function submitName(){
-  var userName = document.getElementById('inputBox').value
+  var userName = document.getElementById('inputBox').value;
   statusMessage.textContent = "Ok, " + userName + ". Click start game for your first question...";
   document.getElementById('submitButton').setAttribute("onClick", "javascript: displayQuestion();" );
   document.getElementById('inputBox').style.display='none';
-  document.getElementById('inputBox').value = ''
+  document.getElementById('inputBox').value = '';
   document.getElementById('submitButton').innerHTML = "Start game";
 }
 
@@ -52,20 +52,20 @@ function displayQuestion(){
 }
 
 function submitAnswer(){
-  console.log("submitted");
+
   var submission = document.getElementById('inputBox').value;
   submissions.push(submission);
 
   if (checker(submission, answers[questionCounter])) {
     introPic.src = "imgs/happypuppy.jpg";
     scoreCounter++;
-    questionCounter++
-    results[questionCounter].textContent = display(questionCounter,questions[questionCounter],answers[questionCounter],submissions[questionCounter-1])
+    questionCounter++;
+    results[questionCounter-1].textContent = display(questionCounter,questions[questionCounter-1],answers[questionCounter-1],submissions[questionCounter-1]);
     statusMessage.textContent = "Nice! That is correct!  Your score is: " + scoreCounter + "/" + questionCounter;
   } else {
     introPic.src = "imgs/sadpuppy.jpg";
-    questionCounter++
-    results[questionCounter].textContent = display(questionCounter,questions[questionCounter],answers[questionCounter],submissions[questionCounter-1])
+    questionCounter++;
+    results[questionCounter-1].textContent = display(questionCounter,questions[questionCounter-1],answers[questionCounter-1],submissions[questionCounter-1])
     statusMessage.textContent = "Aww... That is incorrect... Your score is: " + scoreCounter + "/" + questionCounter;
   }
 
@@ -73,6 +73,15 @@ function submitAnswer(){
   document.getElementById('inputBox').style.display='none';
   document.getElementById('submitButton').setAttribute("onClick", "javascript: displayQuestion();" );
   document.getElementById('submitButton').innerHTML = "Next question";
+
+  if (questionCounter === questions.length) {
+    statusMessage.textContent = statusMessage.textContent + ". That was the last question, but you can click the button below to play again!";
+    document.getElementById('inputBox').value = ''
+    document.getElementById('inputBox').style.display='none';
+    document.getElementById('submitButton').setAttribute("onClick", "javascript: reset();" );
+    document.getElementById('submitButton').innerHTML = "Play Again";
+  }
+
 }
 
 function checker(submission, answerArray) {
@@ -89,4 +98,19 @@ function checker(submission, answerArray) {
 function display (questionNumber,questionAsked,answerArray,submissionReceived) {
   var show = "Question " + questionNumber + " was '" + questionAsked + "' Acceptable answers were: '" + answerArray + ".' You said the answer was '" + submissionReceived + ".'"
   return show
+}
+
+function reset() {
+  submissions = [];
+  scoreCounter = 0;
+  questionCounter = 0;
+  for (var i=0; i<results.length; i++) {
+    results[i].innerHTML = ''
+  }
+  introPic.src = "imgs/lobster.png";
+  statusMessage.textContent = "Hello and welcome to the guessing game! Type your name below:";
+  document.getElementById('submitButton').setAttribute("onClick", "javascript: submitName();" );
+  document.getElementById('inputBox').style.display='inline';
+  document.getElementById('inputBox').value = '';
+  document.getElementById('submitButton').innerHTML = "Here's my name!"
 }

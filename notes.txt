@@ -1,0 +1,53 @@
+#Notes from Class 04
+
+document.getElementById("test")
+
+# = link to an id
+
+.textContent
+.innerHTML
+
+Forking.
+  You clone their repository using the URL for their fork to clone down to your computer
+  Then you have their code from your fork
+  Then you can start working
+  1. Fork their repo
+  2. Make a clone
+  3. They sit next to you while you create code
+  4. Put functions into their guessing game
+
+
+#Notes from Class 05
+
+Semantics vs. Style
+Semantic - using HTML tags that have meaning
+
+1. header
+  a. nav menu a
+  b. nav menu b
+  c. nav menu c
+
+2. main content
+  a.
+  b.
+
+html5doctor.com
+
+3 big grouping contents --> 1. Header, 2. Main, 3. Footer
+
+
+
+
+Javascript normally uses IDs
+Classes are normally for CSS
+
+Cascading..
+  from broad to narrow
+
+
+
+
+
+
+Color
+Font
