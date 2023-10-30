@@ -9,7 +9,7 @@ lite-youtube {
     max-width: 1920px;
 }
 
-/* responsive iframe with a 16:9 aspect ratio
+/* responsive iframe with a 16:10 aspect ratio
     thanks https://css-tricks.com/responsive-iframes/
 */
 lite-youtube::after {
